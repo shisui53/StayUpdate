@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STAYUPDATE</title>
+</head>
+<style>
+    body {
+        margin: 0%;
+        padding: 0%;
+    }
+
+    #navbar {
+        height: 100vh;
+        width: 100%;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 5%;
+        padding-right: 5%;
+        background-color: rgb(47, 59, 47);
+    }
+
+    .logo {
+        height: 50px;
+        width: 150px;
+    }
+
+    nav ul li {
+        list-style-type: none;
+        display: inline-block;
+        padding: 10px 20px;
+    }
+
+    nav ul li a{
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    nav ul li a:hover {
+        color: rgb(78, 192, 236);
+        transition: .3s;
+    }
+
+    #btn {
+        border-color: white;
+        background-color: rgb(47, 59, 47);
+        padding: 12px 30px;
+        border-radius: 30px;
+        color: white;
+        font-weight: bold;
+        font-size: 15px;
+        transition: .4s;
+    }
+
+    #btn:hover {
+        transform: scale(1.3);
+        cursor: pointer;
+    }
+
+</style>
+<body>
+    <div id="navbar">
+        <nav>
+        <a href="index.html"><img class="logo" src="logo-no-background.png" alt=""></a>
+        <ul>
+        <li><a class="menu" href="">Browse</a></li>
+        <li> <a class="menu" href="">Workspace</a></li>
+        <li> <a class="menu" href="">Tools</a></li>
+        <li> <a class="menu" href="">Support</a></li>
+        <li><a class="menu" href="">About Us</a></li>
+    </ul>
+        <a href=""><button id="btn">Get Started</button></a>
+    </nav>
+    </div>
+</body>
+</html>
