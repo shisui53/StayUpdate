@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      .nav{
+        background-image: url("https://www.pixelstalk.net/wp-content/uploads/2016/07/HD-Laptop-Wallpaper.jpg");
+        background-repeat: no-repeat;
+        margin: 0px;
+        padding: 0px;
+        height: 100vh;
+        border: 2px solid #ffff;
+        }
+        #login{
+        width: 35%;
+        margin: auto;
+        border: 2px solid white;
+        margin-top: 150px;
+        height: 55vh;
+        padding: 20px 0px 20px 35px;    
+        }
+        input {
+        width: 90%;
+        padding: 10px;
+        border: none;
+        outline: none;
+        margin: 10px 0px 10px 0px ;
+        border-radius: 8px
+        }
+        .btn {
+        margin-top: 20px;
+        width: 92%;
+        padding: 10px;
+        border-radius: 20px;
+        font-weight: bold;
+        border: none;
+        }
+        #heading {
+        text-align: center;
+        font-family: cursive;
+        }
+        label {
+      color: black; 
+      font-family: 500;
+        font-size: 20px; 
+        font-family: cursive;
+        }
+      
+    </style>
+</head>
+<body>
+    <div class="nav">
+         <div id="login">
+          <h1 id="heading">Please Enter Your Details</h1>
+          <form>
+            <label for="">Enter your email</label>
+            <input type="email" id="email" placeholder="Enter Your Email"/>
+            <label for="">Enter your password</label> 
+            <input type="password" id="password" placeholder="Enter Your Password"/>
+            <input class="btn" type="submit" value="Submit"/>
+          </form>
+         </div>
+    </div>
+</body>
+</html>
+
+<script>
+        document.querySelector("form").addEventListener("submit",userLogin)
+    let userData = JSON.parse(localStorage.getItem("account-data"))|| []
+    function userLogin(e){
+      e.preventDefault()
+    let heading = document.getElementById("heading")
+     let  email = document.getElementById("email").value
+     let  password = document.getElementById("password").value
+
+      let data = userData.find(user => user.email === email && user.password === password)
+      for(let i=0;i<1;i++){
+        if(email===""||password===""){
+        alert("Please fill Credentials")
+        break;
+      }
+      if(data){
+        alert ("Sign in Successful")
+        window.location.href="index.html"
+      } else{
+        alert ("Wrong Credentials")
+        data.reload()
+      }
+      }
+ }
+</script>
