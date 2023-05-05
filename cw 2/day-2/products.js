@@ -1,4 +1,17 @@
-let cont=document.getElementById("cont");
+let cont=document.querySelector(".cont");
+let filter=document.querySelector("#filter");
+filter.addEventListener("change", async function(){
+    try {
+        let value=filter.value;
+        loading()
+        let res = await fetch(`https://restapi-n7ax.onrender.com/${value}`);
+        let data = await res.json();
+        console.log(data);
+        display(data)
+    } catch (error) {
+        console.log(error);
+    }
+})
 
 fData()
 async function fData(){
@@ -11,6 +24,7 @@ async function fData(){
         console.log(error)
     }
 }
+
 
 function display(prod){
     cont.innerHTML='';
@@ -32,15 +46,24 @@ function display(prod){
 
         let h4=document.createElement("h4");
         h4.className='author';
+        h4.textContent=elem.author;
 
         let p=document.createElement("p");
         p.className="content";
         p.textContent=elem.content;
 
+        let btn=document.createElement("button");
+        btn.textContent='Subscribe'
+
         imgdiv.append(img)
-        cardbody.append(h3,h4,p);
+        cardbody.append(h3,p,h4,btn);
         card.append(imgdiv,cardbody);
         cont.append(card)
     })
 }
 
+function loading(){
+    let img=document.createElement('img');
+    img.src='https://cdn.dribbble.com/users/1415337/screenshots/10781083/media/0466184625e53796cfeb7d5c5918dec8.gif'
+    cont.append(img)
+}
