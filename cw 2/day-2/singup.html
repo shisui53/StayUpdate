@@ -6,38 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        #signup{
-        width: 35%;
-        margin: auto;
-        /* border: 2px solid white; */
-        margin-top: 150px;
-        height: 55vh;
-        padding: 20px 0px 20px 35px;
-        
-      }
-      .nav{
-        background-image: url("https://www.pixelstalk.net/wp-content/uploads/2016/07/HD-Laptop-Wallpaper.jpg");
-        background-repeat: no-repeat;
+      body{
+        /* background-image: url("");
+        background-repeat: no-repeat;  */
+        /* background-color: rgb(176, 174, 186);
         margin: 0px;
         padding: 0px;
         height: 100vh;
-        border: 2px solid #ffff;
+        border: 2px solid #ffff; */
       }
+        #signup{
+        margin: auto;
+        height: 60vh;
+        padding: 20px;
+        background-color: #fff;
+        
+      }
+      /* .nav{
+      
+      } */
       input {
         width: 90%;
         padding: 10px;
         border: none;
         outline: none;
+        border-bottom: 1px solid black;
         margin: 10px 0px 10px 0px ;
-        border-radius: 8px;
+        /* border-radius: 8px; */
       }
       .btn {
         margin-top: 20px;
-        width: 92%;
+        width: 95%;
         padding: 10px;
         border-radius: 20px;
         font-weight: bold;
         border: none;
+        background-image: linear-gradient(to right, teal, green);
+        color: #ffff;
+      }
+      .btn:hover{
+        background-image: linear-gradient(to right, red,blue);
       }
       .heading {
         text-align: center;
@@ -49,22 +57,67 @@
         font-size: 20px; 
         font-family: cursive;
       }
+
+      #animationContainer {
+        position: relative;
+        width: 35%;
+        margin: auto;
+        overflow: hidden;
+        padding: 10px 10px;
+        margin-top: 120px;
+        border-radius: 5px;
+      }
+        
+      #animationRound {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        scale: 2.2;
+        background-image: linear-gradient(
+          90deg,
+          rgba(213,62,51,1)25% ,
+          rgba(209,167,52,1)25% ,
+          rgba(209,167,52,1)50% ,
+          rgba(55,122,245,1)50%,
+          rgba(55,122,245,1)75%,  
+          rgba(57,153,83,1)75%
+         
+        );
+      
+        z-index: -1;
+        animation: rotate 10s linear infinite;
+
+      }
+
+      @keyframes rotate{
+
+      from{
+        transform: rotate(360deg);
+      }
+      to{
+        transform: rotate(-360deg);
+      }
+      }
+
     </style>
 </head>
 <body>
     <div class="nav">
+      <div id="animationContainer">
+      <div id="animationRound"></div>
         <div id="signup">
           <h1 class="heading">Please Enter Your Details</h1>
           <form>
             <label for="">Enter your name</label> <br>
-            <input type="text" id="name" placeholder="Enter your name"><br>
+            <input type="text" id="name" placeholder="Enter your name" required><br>
             <label for="">Enter your email</label><br>
-            <input type="email" id="email" placeholder="Enter your email"><br>
+            <input type="email" id="email" placeholder="Enter your email" required><br>
             <label for="">Enter your password</label><br>
-            <input type="password"  id="password" placeholder="Enter your password"><br>
+            <input type="password"  id="password" placeholder="Enter your password" required><br>
             <input class="btn" type="submit" value="Submit"/>
           </form>
         </div> 
+      </div>
       </div>
 </body>
 </html>
