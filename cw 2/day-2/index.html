@@ -12,6 +12,8 @@
         padding: 0%;
     }
 
+    /* Navbar */
+
     #navbar {
         height: 9vh;
         width: 100%;
@@ -23,7 +25,7 @@
         justify-content: space-between;
         padding-left: 5%;
         padding-right: 5%;
-        background-color: rgb(47, 59, 47);
+        background-color: rgba(65,63,48,255);
     }
 
     .logo {
@@ -50,7 +52,7 @@
 
     #btn {
         border-color: white;
-        background-color: rgb(47, 59, 47);
+        background-color: rgba(65,63,48,255);
         padding: 12px 30px;
         border-radius: 30px;
         color: white;
@@ -64,11 +66,89 @@
         cursor: pointer;
     }
 
+    /* Top body */
+
     #tbody {
         width: 100%;
         height: 800px;
-        background-color: rgb(47, 59, 47);
+        background-color: rgba(65,63,48,255);
         padding-top: 0%;
+    }
+
+    /* Bottom body */
+
+    #bbody {
+        width: 100%;
+        height: 250px;
+        background-color: rgba(65,63,48,255);
+        padding-top: 0%;
+    }
+
+    #bbody h1 {
+        padding-top: 50px;
+        text-align: center;
+        color: white;
+    }
+
+    #bbody h1 span {
+        color: rgb(207, 207, 70);
+    }
+
+    #sub {
+        border-color: white;
+        background-color: rgb(65,63,48,255);
+        margin-left: 45%;
+        padding: 12px 30px;
+        border-radius: 30px;
+        color: white;
+        font-weight: bold;
+        font-size: 15px;
+        transition: .4s;
+    }
+
+    #sub:hover {
+        transform: scale(1.3);
+        cursor: pointer;
+    }
+
+    /* Footer */
+
+    #footer {
+        height: 1vh;
+        width: 100%;
+        border-top: 1px solid white;
+    }
+
+    footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 5%;
+        padding-right: 5%;
+        background-color: rgba(65,63,48,255);
+    }
+
+
+    footer ul li {
+        list-style-type: none;
+        display: inline-block;
+        padding: 10px 20px;
+    }
+
+    footer ul li a{
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    footer ul li a:hover {
+        color: rgb(78, 192, 236);
+        transition: .3s;
+    }
+
+    .footer1 {
+        color: white;
+        text-decoration: none;
     }
 </style>
 <body>
@@ -87,6 +167,22 @@
     </div>
     <div id="tbody">
 
+    </div>
+    <div id="bbody">
+        <h1>Interested to get notified? Subscribe and get <span>the most </span>piping <span>hot news</span> of the week, emailed <span>straight</span> to your inbox.</h1>
+        <button id="sub">Subscribe</button>
+    </div>
+    <div id="footer">
+        <footer>
+            <a href="index.html"><img class="logo" src="logo-no-background.png" alt=""></a>
+        <ul>
+        <li><a class="menu" href="">About Us</a></li>
+        <li> <a class="menu" href="">Press Release</a></li>
+        <li> <a class="menu" href="">Press Office</a></li>
+        <li> <a class="menu" href="">Contact Us</a></li>
+    </ul>
+        <a href="" class="footer1">Powered by STAYUPDATE</a>
+        </footer>
     </div>
 </body>
 </html>
