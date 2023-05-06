@@ -1,4 +1,34 @@
 let cont=document.querySelector(".cont");
+let article=[];
+
+const search=document.getElementById("search")
+search.addEventListener("input", function () {
+    let filtered = article.filter(function (elem) {
+        if ((elem.title.toUpperCase().includes(search.value.toUpperCase()) === true)||(elem.content.toUpperCase().includes(search.value.toUpperCase()) === true) ||(elem.author.toUpperCase().includes(search.value.toUpperCase()) === true)) {
+            return true;
+        } else {
+            return false;
+        }
+    })
+    display(filtered);
+})
+
+// const sort=document.getElementById('sort');
+// sort.addEventListener("click",(()=>{
+//     if(sort.value==="") display(article)
+//     else if(sort.value==="most"){
+//             let sorted=[...article]
+//                 let srtd=sorted.sort((a,b)=>+a.date-+b.date)
+//                 display(srtd)
+//             }
+//             else if(sort.value==="least"){
+//                 let sorted=[...article]
+//                 let srtd=sorted.sort((a,b)=>b.date-a.date)
+//                 display(srtd)
+//             }
+//     }))
+
+
 let filter=document.querySelector("#filter");
 filter.addEventListener("change", async function(){
     try {
@@ -7,7 +37,8 @@ filter.addEventListener("change", async function(){
         let res = await fetch(`https://restapi-n7ax.onrender.com/${value}`);
         let data = await res.json();
         console.log(data);
-        display(data)
+        article=data;
+        display(article)
     } catch (error) {
         console.log(error);
     }
@@ -19,7 +50,8 @@ async function fData(){
         let res=await fetch('https://restapi-n7ax.onrender.com/all');
         let data= await res.json();
         console.log(data);
-        display(data);
+        article=data;
+        display(article);
     } catch (error) {
         console.log(error)
     }
