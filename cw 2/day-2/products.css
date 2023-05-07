@@ -5,6 +5,7 @@ body{
     margin: 0px;
     padding: 0px;
     background-color: #c5dfd0;
+    /* background-color: rgb(169, 170, 127) */
     /* background-color: rgba(13, 58, 21, 0.628); */
 }
 
@@ -20,7 +21,8 @@ nav {
     justify-content: space-between;
     padding-left: 5%;
     padding-right: 5%;
-    background-color: rgb(47, 59, 47);
+    /* background-color: rgb(47, 59, 47); */
+    background-color: rgba(65,63,48,255);
 
 }
 
@@ -48,7 +50,8 @@ nav ul li a:hover {
 
 #btn {
     border-color: white;
-    background-color: rgb(47, 59, 47);
+    /* background-color: rgb(47, 59, 47); */
+    background-color: rgba(65,63,48,255);
     padding: 12px 30px;
     border-radius: 30px;
     color: white;
@@ -109,9 +112,88 @@ nav ul li a:hover {
 
 #search{
     border: none;
-    width: 400px;
+    width: 27%;
     padding: 8px;
     padding-left: 20px;
-    /* margin: 10px; */
+    margin: 10px;
     border-radius: 20px;
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 776px) {
+    
+#navbar {
+    border: 2px solid;
+    height: 5vh;
+    width: 100%;
+    margin-bottom: 20px;
+}
+    .main{
+        margin-top: 10px;
+        margin: auto;
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .cont{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 25px;
+    }
+    nav ul li {
+        list-style-type: none;
+        display: inline-block;
+        display: none;
+        /* padding: 0px; */
+        padding: 10px 20px;
+    }
+    .menu{
+        display: none;
+    }
+    #search{
+        border: none;
+        width: 80%;
+        padding: 8px;
+        padding-left: 20px;
+        /* margin: 10px; */
+        border-radius: 20px;
+    }
+}
+
+@media only screen and (max-width: 775px) {
+    #navbar {
+        border: 2px solid;
+        height: 5vh;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .main{
+        margin-top: 10px;
+        margin: auto;
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    nav ul li {
+        list-style-type: none;
+        display: inline-block;
+        display: none;
+        /* padding: 0px; */
+        padding: 10px 20px;
+    }
+
+    #search{
+        border: none;
+        width: 50%;
+        /* width: 350px; */
+        padding: 8px;
+        padding-left: 20px;
+        /* margin: 10px; */
+        border-radius: 20px;
+    }
+    .cont{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        gap: 25px;
+    }
 }
