@@ -13,21 +13,6 @@ search.addEventListener("input", function () {
     display(filtered);
 })
 
-// const sort=document.getElementById('sort');
-// sort.addEventListener("click",(()=>{
-//     if(sort.value==="") display(article)
-//     else if(sort.value==="most"){
-//             let sorted=[...article]
-//                 let srtd=sorted.sort((a,b)=>+a.date-+b.date)
-//                 display(srtd)
-//             }
-//             else if(sort.value==="least"){
-//                 let sorted=[...article]
-//                 let srtd=sorted.sort((a,b)=>b.date-a.date)
-//                 display(srtd)
-//             }
-//     }))
-
 
 let filter=document.querySelector("#filter");
 filter.addEventListener("change", async function(){
