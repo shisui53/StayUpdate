@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STAYUPDATE</title>
+</head>
+<style>
+    body {
+        margin: 0%;
+        padding: 0%;
+    }
+
+    #navbar {
+        height: 9vh;
+        width: 100%;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 5%;
+        padding-right: 5%;
+        background-color: rgb(47, 59, 47);
+    }
+
+    .logo {
+        height: 50px;
+        width: 150px;
+    }
+
+    nav ul li {
+        list-style-type: none;
+        display: inline-block;
+        padding: 10px 20px;
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    nav ul li a:hover {
+        color: rgb(78, 192, 236);
+        transition: 0.3s;
+    }
+
+    #tbody {
+        width: 100%;
+        height: 800px;
+        background-color: rgb(47, 59, 47);
+        padding-top: 0%;
+    }
+
+    /* =============== */
+
+    #mainList {
+        list-style-type: none;
+        font-size: 18px;
+        margin-top: 15px;
+    }
+
+    #mainList li:hover {
+        border: 3px solid rgb(68, 32, 32);
+        border-radius: 15px;
+        background-color: rgb(36, 64, 43);
+        color: white;
+        cursor: pointer;
+    }
+
+    #mainList li {
+        display: inline-block;
+        padding: 10px;
+        border: 3px solid black;
+        border-radius: 8px;
+        margin: 5px;
+    }
+
+    #addingForm {
+        border: 2px solid black;
+        box-shadow: 6px 6px 1px 0px grey;
+        padding: 20px 0px 20px 40px;
+        border-radius: 10px;
+        display: none;
+        margin-left: 25%;
+        width: 50%;
+        flex-direction: column;
+        row-gap: 15px;
+    }
+
+    #addingForm span {
+        margin-right: 10px;
+    }
+
+
+    input,
+    select {
+        padding: 5px;
+    }
+
+    #submit {
+        border: 1px double white;
+        border-radius: 3px;
+        padding: 4px 10px;
+        box-shadow: 2px 2px 1px 0px grey;
+        font-size: 18px;
+    }
+
+    #submit:hover {
+        cursor: pointer;
+    }
+
+    label,
+    textarea,
+    span {
+        padding: 5px;
+        font-size: 18px;
+
+    }
+</style>
+
+<body>
+    <div id="navbar">
+        <nav>
+            <a href="index.html"><img class="logo" src="logo-no-background.png" alt="" /></a>
+            <ul>
+                <li><a class="menu" href="">Browse</a></li>
+                <li><a class="menu" href="">Workspace</a></li>
+                <li><a class="menu" href="">Tools</a></li>
+                <li><a class="menu" href="">Support</a></li>
+                <li><a class="menu" href="">About Us</a></li>
+            </ul>
+
+        </nav>
+    </div>
+    <ul id="mainList">
+        <li id="addnews">Add news</li>
+        <li id="deletenews">Delete news</li>
+        <li id="correctnews">News correction </li>
+    </ul>
+
+    <div id="container">
+        <form id="addingForm">
+            <div>
+                <label>Select Category</label>
+
+                <select id="category">
+                    <option value="technology">Technology</option>
+                    <option value="sports">Sports</option>
+                    <option value="national">National</option>
+                    <option value="business">Business</option>
+                    <option value="world">World</option>
+                    <option value="politics">Politics</option>
+                    <option value="entertainment">Entertainment</option>
+                    <option value="others">Others</option>
+                </select>
+            </div>
+            <div>
+                <input type="text" placeholder="Author" />
+            </div>
+            <div>
+                <input type="text" id="title" placeholder="Title" />
+            </div>
+            <div>
+                <textarea name="message" rows="2" cols="40" id="content" placeholder="Content"></textarea>
+            </div>
+            <div><input type="url" id="imgurl" placeholder="Image URL" /></div>
+            <div>
+                <input type="url" id="weburl" placeholder="Website URL" />
+            </div>
+            <div><span>Date</span><input type="date" id="date" /></div>
+            <div><span>Time</span><input type="time" id="time" /></div>
+            <div><input type="submit" id="submit" /></div>
+        </form>
+
+    </div>
+
+</body>
+<script>
+
+
+    let addingform = document.querySelector("#addingForm");
+    // addingform.addEventListener("submit", () => {
+    //     event.preventDefault();
+
+    //     let obj = {
+
+    //     }
+    // });
+    let addnews = document.querySelector("#addnews");
+    addnews.addEventListener("click", () => {
+        if (addingform.style.display == "none") {
+            addingform.style.display = "flex";
+        } else {
+            addingform.style.display = "none";
+        }
+    });
+
+
+
+
+
+</script>
+
+</html>
