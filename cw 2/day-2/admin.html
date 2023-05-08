@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -80,22 +81,24 @@
         margin: 5px;
     }
 
-    #addingForm {
+    #addingForm,
+    #deletingForm,
+    #correctionForm {
         border: 2px solid black;
         box-shadow: 6px 6px 1px 0px grey;
-        padding: 20px 0px 20px 40px;
+        padding: 20px 2px 20px 40px;
         border-radius: 10px;
         display: none;
         margin-left: 25%;
         width: 50%;
         flex-direction: column;
         row-gap: 15px;
+        box-sizing: border-box;
     }
 
-    #addingForm span {
+    span {
         margin-right: 10px;
     }
-
 
     input,
     select {
@@ -114,12 +117,38 @@
         cursor: pointer;
     }
 
+    textarea {
+        width: 90%;
+        margin-right: 5px;
+    }
+
     label,
     textarea,
     span {
         padding: 5px;
         font-size: 18px;
+    }
 
+    @media only screen and (max-width: 900px) {
+        #container {
+            width: 90%;
+            margin: a;
+        }
+
+        #addingForm,
+        #deletingForm {
+            border: none;
+            box-shadow: none;
+            margin-left: 0%;
+            width: 80%;
+        }
+
+        label,
+        textarea,
+        input,
+        #submit {
+            width: 90%;
+        }
     }
 </style>
 
@@ -134,16 +163,16 @@
                 <li><a class="menu" href="">Support</a></li>
                 <li><a class="menu" href="">About Us</a></li>
             </ul>
-
         </nav>
     </div>
     <ul id="mainList">
         <li id="addnews">Add news</li>
         <li id="deletenews">Delete news</li>
-        <li id="correctnews">News correction </li>
+        <li id="correctnews">News correction</li>
     </ul>
 
     <div id="container">
+        <!-- === adding form === -->
         <form id="addingForm">
             <div>
                 <label>Select Category</label>
@@ -160,49 +189,193 @@
                 </select>
             </div>
             <div>
-                <input type="text" placeholder="Author" />
+                <input type="text" placeholder="Author" id="author" required />
             </div>
             <div>
-                <input type="text" id="title" placeholder="Title" />
+                <input type="text" id="title" placeholder="Title" required />
             </div>
             <div>
-                <textarea name="message" rows="2" cols="40" id="content" placeholder="Content"></textarea>
+                <textarea name="message" rows="2" cols="40" id="content" placeholder="Content" required></textarea>
             </div>
-            <div><input type="url" id="imgurl" placeholder="Image URL" /></div>
             <div>
-                <input type="url" id="weburl" placeholder="Website URL" />
+                <input type="url" id="imageUrl" placeholder="Image URL" required />
             </div>
-            <div><span>Date</span><input type="date" id="date" /></div>
-            <div><span>Time</span><input type="time" id="time" /></div>
-            <div><input type="submit" id="submit" /></div>
+            <div>
+                <input type="url" id="url" placeholder="Website URL" />
+            </div>
+            <div><span>Date</span><input type="date" id="date" required /></div>
+            <div><span>Time</span><input type="time" id="time" required /></div>
+            <div><input type="submit" id="submit" value="Post" /></div>
         </form>
-
+        <!-- == deleting form == -->
+        <form id="deletingForm">
+            <div>
+                <label>Select Category</label>
+                <select id="category2">
+                    <option value="technology">Technology</option>
+                    <option value="sports">Sports</option>
+                    <option value="national">National</option>
+                    <option value="business">Business</option>
+                    <option value="world">World</option>
+                    <option value="politics">Politics</option>
+                    <option value="entertainment">Entertainment</option>
+                    <option value="others">Others</option>
+                </select>
+            </div>
+            <div>
+                <input type="text" placeholder="Author" id="author2" required />
+            </div>
+            <div>
+                <input type="text" id="title2" placeholder="Title" required />
+            </div>
+            <div><input type="submit" id="submit" value="Delete" /></div>
+        </form>
+        <!-- === news correction -->
+        <form id="correctionForm">
+            <div>
+                <label>Select Category</label>
+                <select id="category3">
+                    <option value="technology">Technology</option>
+                    <option value="sports">Sports</option>
+                    <option value="national">National</option>
+                    <option value="business">Business</option>
+                    <option value="world">World</option>
+                    <option value="politics">Politics</option>
+                    <option value="entertainment">Entertainment</option>
+                    <option value="others">Others</option>
+                </select>
+            </div>
+            <div>
+                <input type="text" placeholder="Author" id="author3" required />
+            </div>
+            <div>
+                <input type="text" id="title3" placeholder="Title" required />
+            </div>
+            <div>
+                <textarea name="message" rows="2" cols="40" id="content3" placeholder="Content" required></textarea>
+            </div>
+            <div>
+                <input type="url" id="imageUrl3" placeholder="Image URL" required />
+            </div>
+            <div><input type="submit" id="submit" value="Update" /></div>
+        </form>
     </div>
-
 </body>
 <script>
-
-
-    let addingform = document.querySelector("#addingForm");
-    // addingform.addEventListener("submit", () => {
-    //     event.preventDefault();
-
-    //     let obj = {
-
-    //     }
-    // });
     let addnews = document.querySelector("#addnews");
+    let addingform = document.querySelector("#addingForm");
+    let deletenews = document.querySelector("#deletenews");
+    let deletingform = document.querySelector("#deletingForm");
+    let correctnews = document.querySelector("#correctnews");
+    let correctionForm = document.querySelector("#correctionForm");
+
+
+    // ====     Add news
     addnews.addEventListener("click", () => {
+        deletingform.style.display = "none";
+        correctionForm.style.display = "none";
         if (addingform.style.display == "none") {
             addingform.style.display = "flex";
         } else {
             addingform.style.display = "none";
         }
     });
+    addingform.addEventListener("submit", () => {
+        event.preventDefault();
+        let category = document.querySelector("#category").value;
+        let author = document.querySelector("#author").value;
+        let title = document.querySelector("#title").value;
+        let content = document.querySelector("#content").value;
+        let imageUrl = document.querySelector("#imageUrl").value;
+        let url = document.querySelector("#url").value;
+        let date = document.querySelector("#date").value;
+        let time = document.querySelector("#time").value;
+        let obj = {
+            author,
+            title,
+            content,
+            imageUrl,
+            url,
+            date,
+            time,
+        };
+
+        fetch(`https://restapi-n7ax.onrender.com/${category}`, {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json",
+            },
+            body: JSON.stringify(obj),
+        });
+        addingform.reset();
+    });
+
+    // ===== delete news
+    deletenews.addEventListener("click", () => {
+        addingform.style.display = "none";
+        correctionForm.style.display = "none";
+        if (deletingform.style.display == "none") {
+            deletingform.style.display = "flex";
+        } else {
+            deletingform.style.display = "none";
+        }
+    });
+    deletingform.addEventListener("submit", () => {
+        event.preventDefault();
+        let category2 = document.querySelector("#category2").value;
+        let author2 = document.querySelector("#author2").value;
+        let title2 = document.querySelector("#title2").value;
+
+        fetch(
+            `https://restapi-n7ax.onrender.com/${category2}?author=${author2}&title=${title2}`,
+            {
+                method: "DELETE",
+                headers: {
+                    "Content-type": "application/json",
+                },
+            }
+        );
+        deletingform.reset();
+    });
 
 
+    // === correction in news
 
+    correctnews.addEventListener("click", () => {
+        addingform.style.display = "none";
+        deletingform.style.display = "none";
+        if (correctionForm.style.display == "none") {
+            correctionForm.style.display = "flex";
+        } else {
+            correctionForm.style.display = "none";
+        }
+    });
+    correctionForm.addEventListener("submit", () => {
+        event.preventDefault();
+        let category = document.querySelector("#category3").value;
+        let author = document.querySelector("#author3").value;
+        let title = document.querySelector("#title3").value;
+        let content = document.querySelector("#content3").value;
+        let imageUrl = document.querySelector("#imageUrl3").value;
 
+        let obj = {
+            author,
+            title,
+            content,
+            imageUrl
+        };
+        fetch(
+            `https://restapi-n7ax.onrender.com/${category}?author=${author}&title=${title}`,
+            {
+                method: "PATCH",
+                headers: {
+                    "Content-type": "application/json",
+                },
+
+            }
+        );
+        deletingform.reset();
+    });
 
 </script>
 
