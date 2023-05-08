@@ -5,7 +5,7 @@ body{
     margin: 0px;
     padding: 0px;
     /* background-color: #c5dfd0; */
-    background-color: rgb(158, 158, 110)
+    background-color: rgb(196, 196, 157)
     /* background-color: rgba(13, 58, 21, 0.628); */
 }
 
@@ -81,12 +81,12 @@ nav ul li a:hover {
     margin: 15px;
     border-radius: 10px;
     /* background-color: #5a7353; */
-    background-color: rgb(163, 163, 105);
+    background-color: rgb(176, 176, 132);
 
     border: none;
 }
 #filter:hover{
-    background-color: rgb(111, 108, 83);
+    background-color: rgb(171, 163, 110);
 }
 .card{
     padding: 10px;
@@ -126,6 +126,7 @@ nav ul li a:hover {
 #footer {
     height: 1vh;
     width: 100%;
+    margin-top: 20px;
     border-top: 1px solid white;
 }
 
@@ -161,7 +162,7 @@ footer ul li a:hover {
     text-decoration: none;
 }
 
-@media only screen and (max-width: 1024px) and (min-width: 776px) {
+@media only screen and (max-width: 930px) and (min-width: 501px) {
     
 #navbar {
     border: 2px solid;
@@ -204,7 +205,7 @@ footer ul li a:hover {
     }
 }
 
-@media only screen and (max-width: 775px) {
+@media only screen and (max-width: 500px) {
     #navbar {
         border: 2px solid;
         height: 5vh;
