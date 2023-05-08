@@ -1,0 +1,382 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STAYUPDATE</title>
+</head>
+<style>
+    body {
+        margin: 0%;
+        padding: 0%;
+    }
+
+    #navbar {
+        height: 9vh;
+        width: 100%;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 5%;
+        padding-right: 5%;
+        background-color: rgb(47, 59, 47);
+    }
+
+    .logo {
+        height: 50px;
+        width: 150px;
+    }
+
+    nav ul li {
+        list-style-type: none;
+        display: inline-block;
+        padding: 10px 20px;
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    nav ul li a:hover {
+        color: rgb(78, 192, 236);
+        transition: 0.3s;
+    }
+
+    #tbody {
+        width: 100%;
+        height: 800px;
+        background-color: rgb(47, 59, 47);
+        padding-top: 0%;
+    }
+
+    /* =============== */
+
+    #mainList {
+        list-style-type: none;
+        font-size: 18px;
+        margin-top: 15px;
+    }
+
+    #mainList li:hover {
+        border: 3px solid rgb(68, 32, 32);
+        border-radius: 15px;
+        background-color: rgb(36, 64, 43);
+        color: white;
+        cursor: pointer;
+    }
+
+    #mainList li {
+        display: inline-block;
+        padding: 10px;
+        border: 3px solid black;
+        border-radius: 8px;
+        margin: 5px;
+    }
+
+    #addingForm,
+    #deletingForm,
+    #correctionForm {
+        border: 2px solid black;
+        box-shadow: 6px 6px 1px 0px grey;
+        padding: 20px 2px 20px 40px;
+        border-radius: 10px;
+        display: none;
+        margin-left: 25%;
+        width: 50%;
+        flex-direction: column;
+        row-gap: 15px;
+        box-sizing: border-box;
+    }
+
+    span {
+        margin-right: 10px;
+    }
+
+    input,
+    select {
+        padding: 5px;
+    }
+
+    #submit {
+        border: 1px double white;
+        border-radius: 3px;
+        padding: 4px 10px;
+        box-shadow: 2px 2px 1px 0px grey;
+        font-size: 18px;
+    }
+
+    #submit:hover {
+        cursor: pointer;
+    }
+
+    textarea {
+        width: 90%;
+        margin-right: 5px;
+    }
+
+    label,
+    textarea,
+    span {
+        padding: 5px;
+        font-size: 18px;
+    }
+
+    @media only screen and (max-width: 900px) {
+        #container {
+            width: 90%;
+            margin: a;
+        }
+
+        #addingForm,
+        #deletingForm {
+            border: none;
+            box-shadow: none;
+            margin-left: 0%;
+            width: 80%;
+        }
+
+        label,
+        textarea,
+        input,
+        #submit {
+            width: 90%;
+        }
+    }
+</style>
+
+<body>
+    <div id="navbar">
+        <nav>
+            <a href="index.html"><img class="logo" src="logo-no-background.png" alt="" /></a>
+            <ul>
+                <li><a class="menu" href="">Browse</a></li>
+                <li><a class="menu" href="">Workspace</a></li>
+                <li><a class="menu" href="">Tools</a></li>
+                <li><a class="menu" href="">Support</a></li>
+                <li><a class="menu" href="">About Us</a></li>
+            </ul>
+        </nav>
+    </div>
+    <ul id="mainList">
+        <li id="addnews">Add news</li>
+        <li id="deletenews">Delete news</li>
+        <li id="correctnews">News correction</li>
+    </ul>
+
+    <div id="container">
+        <!-- === adding form === -->
+        <form id="addingForm">
+            <div>
+                <label>Select Category</label>
+
+                <select id="category">
+                    <option value="technology">Technology</option>
+                    <option value="sports">Sports</option>
+                    <option value="national">National</option>
+                    <option value="business">Business</option>
+                    <option value="world">World</option>
+                    <option value="politics">Politics</option>
+                    <option value="entertainment">Entertainment</option>
+                    <option value="others">Others</option>
+                </select>
+            </div>
+            <div>
+                <input type="text" placeholder="Author" id="author" required />
+            </div>
+            <div>
+                <input type="text" id="title" placeholder="Title" required />
+            </div>
+            <div>
+                <textarea name="message" rows="2" cols="40" id="content" placeholder="Content" required></textarea>
+            </div>
+            <div>
+                <input type="url" id="imageUrl" placeholder="Image URL" required />
+            </div>
+            <div>
+                <input type="url" id="url" placeholder="Website URL" />
+            </div>
+            <div><span>Date</span><input type="date" id="date" required /></div>
+            <div><span>Time</span><input type="time" id="time" required /></div>
+            <div><input type="submit" id="submit" value="Post" /></div>
+        </form>
+        <!-- == deleting form == -->
+        <form id="deletingForm">
+            <div>
+                <label>Select Category</label>
+                <select id="category2">
+                    <option value="technology">Technology</option>
+                    <option value="sports">Sports</option>
+                    <option value="national">National</option>
+                    <option value="business">Business</option>
+                    <option value="world">World</option>
+                    <option value="politics">Politics</option>
+                    <option value="entertainment">Entertainment</option>
+                    <option value="others">Others</option>
+                </select>
+            </div>
+            <div>
+                <input type="text" placeholder="Author" id="author2" required />
+            </div>
+            <div>
+                <input type="text" id="title2" placeholder="Title" required />
+            </div>
+            <div><input type="submit" id="submit" value="Delete" /></div>
+        </form>
+        <!-- === news correction -->
+        <form id="correctionForm">
+            <div>
+                <label>Select Category</label>
+                <select id="category3">
+                    <option value="technology">Technology</option>
+                    <option value="sports">Sports</option>
+                    <option value="national">National</option>
+                    <option value="business">Business</option>
+                    <option value="world">World</option>
+                    <option value="politics">Politics</option>
+                    <option value="entertainment">Entertainment</option>
+                    <option value="others">Others</option>
+                </select>
+            </div>
+            <div>
+                <input type="text" placeholder="Author" id="author3" required />
+            </div>
+            <div>
+                <input type="text" id="title3" placeholder="Title" required />
+            </div>
+            <div>
+                <textarea name="message" rows="2" cols="40" id="content3" placeholder="Content" required></textarea>
+            </div>
+            <div>
+                <input type="url" id="imageUrl3" placeholder="Image URL" required />
+            </div>
+            <div><input type="submit" id="submit" value="Update" /></div>
+        </form>
+    </div>
+</body>
+<script>
+    let addnews = document.querySelector("#addnews");
+    let addingform = document.querySelector("#addingForm");
+    let deletenews = document.querySelector("#deletenews");
+    let deletingform = document.querySelector("#deletingForm");
+    let correctnews = document.querySelector("#correctnews");
+    let correctionForm = document.querySelector("#correctionForm");
+
+
+    // ====     Add news
+    addnews.addEventListener("click", () => {
+        deletingform.style.display = "none";
+        correctionForm.style.display = "none";
+        if (addingform.style.display == "none") {
+            addingform.style.display = "flex";
+        } else {
+            addingform.style.display = "none";
+        }
+    });
+    addingform.addEventListener("submit", () => {
+        event.preventDefault();
+        let category = document.querySelector("#category").value;
+        let author = document.querySelector("#author").value;
+        let title = document.querySelector("#title").value;
+        let content = document.querySelector("#content").value;
+        let imageUrl = document.querySelector("#imageUrl").value;
+        let url = document.querySelector("#url").value;
+        let date = document.querySelector("#date").value;
+        let time = document.querySelector("#time").value;
+        let obj = {
+            author,
+            title,
+            content,
+            imageUrl,
+            url,
+            date,
+            time,
+        };
+
+        fetch(`https://restapi-n7ax.onrender.com/${category}`, {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json",
+            },
+            body: JSON.stringify(obj),
+        });
+        addingform.reset();
+    });
+
+    // ===== delete news
+    deletenews.addEventListener("click", () => {
+        addingform.style.display = "none";
+        correctionForm.style.display = "none";
+        if (deletingform.style.display == "none") {
+            deletingform.style.display = "flex";
+        } else {
+            deletingform.style.display = "none";
+        }
+    });
+    deletingform.addEventListener("submit", () => {
+        event.preventDefault();
+        let category2 = document.querySelector("#category2").value;
+        let author2 = document.querySelector("#author2").value;
+        let title2 = document.querySelector("#title2").value;
+
+        fetch(
+            `https://restapi-n7ax.onrender.com/${category2}?author=${author2}&title=${title2}`,
+            {
+                method: "DELETE",
+                headers: {
+                    "Content-type": "application/json",
+                },
+            }
+        );
+        deletingform.reset();
+    });
+
+
+    // === correction in news
+
+    correctnews.addEventListener("click", () => {
+        addingform.style.display = "none";
+        deletingform.style.display = "none";
+        if (correctionForm.style.display == "none") {
+            correctionForm.style.display = "flex";
+        } else {
+            correctionForm.style.display = "none";
+        }
+    });
+    correctionForm.addEventListener("submit", () => {
+        event.preventDefault();
+        let category = document.querySelector("#category3").value;
+        let author = document.querySelector("#author3").value;
+        let title = document.querySelector("#title3").value;
+        let content = document.querySelector("#content3").value;
+        let imageUrl = document.querySelector("#imageUrl3").value;
+
+        let obj = {
+            author,
+            title,
+            content,
+            imageUrl
+        };
+        fetch(
+            `https://restapi-n7ax.onrender.com/${category}?author=${author}&title=${title}`,
+            {
+                method: "PATCH",
+                headers: {
+                    "Content-type": "application/json",
+                },
+
+            }
+        );
+        deletingform.reset();
+    });
+
+</script>
+
+</html>
