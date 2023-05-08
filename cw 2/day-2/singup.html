@@ -6,25 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-      body{
-        /* background-image: url("");
-        background-repeat: no-repeat;  */
-        /* background-color: rgb(176, 174, 186);
-        margin: 0px;
-        padding: 0px;
-        height: 100vh;
-        border: 2px solid #ffff; */
-      }
         #signup{
         margin: auto;
-        height: 60vh;
-        padding: 20px;
+        height: 58vh;
+        padding: 20px 10px 20px 20px;
         background-color: #fff;
-        
       }
-      /* .nav{
-      
-      } */
       input {
         width: 90%;
         padding: 10px;
@@ -32,7 +19,7 @@
         outline: none;
         border-bottom: 1px solid black;
         margin: 10px 0px 10px 0px ;
-        /* border-radius: 8px; */
+       
       }
       .btn {
         margin-top: 20px;
@@ -57,17 +44,16 @@
         font-size: 20px; 
         font-family: cursive;
       }
-
       #animationContainer {
         position: relative;
         width: 35%;
         margin: auto;
         overflow: hidden;
         padding: 10px 10px;
-        margin-top: 120px;
+        margin-top: 55px;
+        margin-bottom: 55px;
         border-radius: 5px;
       }
-        
       #animationRound {
         position: absolute;
         width: 100%;
@@ -81,16 +67,11 @@
           rgba(55,122,245,1)50%,
           rgba(55,122,245,1)75%,  
           rgba(57,153,83,1)75%
-         
         );
-      
         z-index: -1;
         animation: rotate 10s linear infinite;
-
       }
-
       @keyframes rotate{
-
       from{
         transform: rotate(360deg);
       }
@@ -98,10 +79,132 @@
         transform: rotate(-360deg);
       }
       }
+      .forLogin{
+        text-align: center;
+        padding-top: 5px;
+      }
+      .forLogin>a{
+        color: teal;
+        text-decoration: none;
+      }
+      .forLogin>a:hover{
+        color: teal;
+        text-decoration: underline;
+      }
+      body {
+      margin: 0%;
+      padding: 0%;
+    }
+
+    /* Navbar */
+
+    #navbar {
+      height: 9vh;
+      width: 100%;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-left: 5%;
+      padding-right: 5%;
+      background-color: rgba(65, 63, 48, 255);
+    }
+
+    .logo {
+      height: 50px;
+      width: 150px;
+    }
+
+    nav ul li {
+      list-style-type: none;
+      display: inline-block;
+      padding: 10px 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      color: rgb(78, 192, 236);
+      transition: 0.3s;
+    }
+    #btn {
+      border-color: white;
+      background-color: rgba(65, 63, 48, 255);
+      padding: 12px 30px;
+      border-radius: 30px;
+      color: white;
+      font-weight: bold;
+      font-size: 15px;
+      transition: 0.4s;
+    }
+
+    #btn:hover {
+      transform: scale(1.3);
+      cursor: pointer;
+      color: rgb(130, 251, 251);
+    }
+    #footer {
+      height: 1vh;
+      width: 100%;
+      border-top: 1px solid white;
+    }
+
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-left: 5%;
+      padding-right: 5%;
+      background-color: rgba(65, 63, 48, 255);
+    }
+
+    footer ul li {
+      list-style-type: none;
+      display: inline-block;
+      padding: 10px 20px;
+    }
+
+    footer ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer ul li a:hover {
+      color: rgb(78, 192, 236);
+      transition: 0.3s;
+    }
+
+    .footer1 {
+      color: white;
+      text-decoration: none;
+    }
+
 
     </style>
 </head>
 <body>
+  <div id="navbar">
+    <nav>
+      <a href="index.html"
+        ><img class="logo" src="logo-no-background.png" alt=""
+      /></a>
+      <ul>
+        <li><a class="menu" href="">Browse</a></li>
+        <li><a class="menu" href="">Workspace</a></li>
+        <li><a class="menu" href="">Tools</a></li>
+        <li><a class="menu" href="">Support</a></li>
+        <li><a class="menu" href="">About Us</a></li>
+      </ul>
+      <a href=""><button id="btn">Get Started</button></a>
+    </nav>
+  </div>
     <div class="nav">
       <div id="animationContainer">
       <div id="animationRound"></div>
@@ -116,26 +219,46 @@
             <input type="password"  id="password" placeholder="Enter your password" required><br>
             <input class="btn" type="submit" value="Submit"/>
           </form>
+          <div class="forLogin"><span>Click here to login? </span><a href="login.html">Login</a></div>
         </div> 
       </div>
+      </div>
+      <div id="footer">
+        <footer>
+          <a href="index.html"
+            ><img class="logo" src="logo-no-background.png" alt=""
+          /></a>
+          <ul>
+            <li><a class="menu" href="">About Us</a></li>
+            <li><a class="menu" href="">Press Release</a></li>
+            <li><a class="menu" href="">Press Office</a></li>
+            <li><a class="menu" href="">Contact Us</a></li>
+          </ul>
+          <a href="" class="footer1">Powered by STAYUPDATE</a>
+        </footer>
       </div>
 </body>
 </html>
 
 <script>
-     document.querySelector("form").addEventListener("submit",userSignin)
-  let miltiUser =JSON.parse(localStorage.getItem("account-data")) || []
-  function userSignin(e){
-     e.preventDefault()
-     
-       let obj = {
-        name : document.getElementById("name").value,
-       email : document.getElementById("email").value,
-       password : document.getElementById("password").value
-       }
-       miltiUser.push(obj)
-       localStorage.setItem("account-data",JSON.stringify(miltiUser))
-       alert("User registered successfully")  
-       window.location.href="login.html"
+    document.querySelector("form").addEventListener("submit", userSignup);
+  let multiUser = JSON.parse(localStorage.getItem("account-data")) || [];
+  function userSignup(e) {
+    e.preventDefault();
+    let obj = {
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      password: document.getElementById("password").value,
+    };
+    let data = multiUser.find((user) => user.email === obj.email);
+    if (data) {
+      alert("User already registered");
+      location.reload()
+    } else {
+      multiUser.push(obj);
+      localStorage.setItem("account-data", JSON.stringify(multiUser));
+      alert("User registered successfully");
+      window.location.href = "login.html";
+    }
   }
 </script>
