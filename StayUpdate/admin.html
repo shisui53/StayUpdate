@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STAYUPDATE</title>
+    <link rel="stylesheet" href="./styles/admin.css">
+</head>
+<body>
+    <div id="navbar">
+        <nav>
+            <a href="./index.html"><img class="logo" src="logo-no-background.png" alt="" /></a>
+            <ul>
+                <li><a class="menu" href="login.html">Browse</a></li>
+                <li><a class="menu" href="login.html">Workspace</a></li>
+                <li><a class="menu" href="login.html">Tools</a></li>
+                <li><a class="menu" href="subscription.html">Support</a></li>
+                <li><a class="menu" href="subscription.html">About Us</a></li>
+            </ul>
+        </nav>
+    </div>
+    <ul id="mainList">
+        <li id="addnews">Add news</li>
+        <li id="deletenews">Delete news</li>
+        <li id="correctnews">News correction</li>
+    </ul>
+
+    <div id="container">
+        <!-- === adding form === -->
+        <form id="addingForm" style="display: none">
+            <div>
+                <label>Select Category</label>
+
+                <select id="category">
+                    <option value="technology">Technology</option>
+                    <option value="sports">Sports</option>
+                    <option value="national">National</option>
+                    <option value="business">Business</option>
+                    <option value="world">World</option>
+                    <option value="politics">Politics</option>
+                    <option value="entertainment">Entertainment</option>
+                    <option value="others">Others</option>
+                </select>
+            </div>
+            <div>
+                <input type="text" placeholder="Author name" id="author" required />
+            </div>
+            <div>
+                <input type="text" id="title" placeholder="Title" required />
+            </div>
+            <div>
+                <textarea name="message" rows="2" cols="40" id="content" placeholder="Content" required></textarea>
+            </div>
+            <div>
+                <input type="url" id="imageUrl" placeholder="Image URL" required />
+            </div>
+            <div>
+                <input type="url" id="url" placeholder="Website URL" />
+            </div>
+            <div><span>Date</span><input type="date" id="date" required /></div>
+            <div><span>Time</span><input type="time" id="time" required /></div>
+            <div><input type="submit" id="submit" value="Post" /></div>
+        </form>
+        <!-- == deleting form == -->
+        <form id="deletingForm" style="display: none">
+            <div>
+                <label>Select Category</label>
+                <select id="category2">
+                    <option value="technology">Technology</option>
+                    <option value="sports">Sports</option>
+                    <option value="national">National</option>
+                    <option value="business">Business</option>
+                    <option value="world">World</option>
+                    <option value="politics">Politics</option>
+                    <option value="entertainment">Entertainment</option>
+                    <option value="others">Others</option>
+                </select>
+            </div>
+            <div>
+                <input type="text" placeholder="Author name" id="author2" required />
+            </div>
+            <div>
+                <input type="text" id="title2" placeholder="Title" required />
+            </div>
+            <div><input type="submit" id="submit" value="Delete" /></div>
+        </form>
+        <!-- === news correction -->
+        <form id="correctionForm" style="display: none">
+            <div>
+                <label>Select Category</label>
+                <select id="category3">
+                    <option value="technology">Technology</option>
+                    <option value="sports">Sports</option>
+                    <option value="national">National</option>
+                    <option value="business">Business</option>
+                    <option value="world">World</option>
+                    <option value="politics">Politics</option>
+                    <option value="entertainment">Entertainment</option>
+                    <option value="others">Others</option>
+                </select>
+            </div>
+            <div>
+                <input type="text" placeholder="Author name" id="author3" required />
+            </div>
+            <div>
+                <input type="text" id="title3" placeholder="Title" required />
+            </div>
+            <div>
+                <textarea name="message" rows="2" cols="40" id="content3" placeholder="Content" required></textarea>
+            </div>
+            <div>
+                <input type="url" id="imageUrl3" placeholder="Image URL" required />
+            </div>
+            <div><input type="submit" id="submit" value="Update" /></div>
+        </form>
+    </div>
+</body>
+<script src="./Scripts/admin.js"></script>
+
+</html>

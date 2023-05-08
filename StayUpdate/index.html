@@ -1,387 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>STAYUPDATE</title>
-  </head>
-  <style>
-    body {
-      margin: 0%;
-      padding: 0%;
-    }
-
-    /* Navbar */
-
-    #navbar {
-        height: 1vh;
-        width: 100%;
-
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-left: 5%;
-      padding-right: 5%;
-      background-color: rgba(65, 63, 48, 255);
-    }
-
-    .logo {
-      height: 50px;
-      width: 150px;
-    }
-
-    nav ul li {
-      list-style-type: none;
-      display: inline-block;
-      padding: 10px 20px;
-    }
-
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav ul li a:hover {
-      color: rgb(78, 192, 236);
-      transition: 0.3s;
-    }
-
-    #btn {
-      border-color: white;
-      background-color: rgba(65, 63, 48, 255);
-      padding: 12px 30px;
-      border-radius: 30px;
-      color: white;
-      font-weight: bold;
-      font-size: 15px;
-      transition: 0.4s;
-    }
-
-    #btn:hover {
-      transform: scale(1.3);
-      cursor: pointer;
-    }
-
-    /* Top body */
-
-    #tbody {
-        width: 100%;
-        height: 1100px;
-        background-color: rgba(65,63,48,255);
-        padding-top: 0%;
-    }
-
-    #tbody h1 {
-        padding-top: 50px;
-        padding-left: 3%;
-        padding-right: 3%;
-        font-size: 100px;
-        color: white;
-        padding-bottom: 0%;
-        margin-bottom: 0%;
-    }
-
-    #tbody h1 span {
-        color: rgba(239,227,176,255);
-    }
-
-    #tbody-1 {
-        width: 90%;
-        display: grid;
-        Grid-auto-rows: size;
-        Grid-template-columns: repeat(2,1fr);
-        padding-left: 12%;
-        padding-top: 50px;
-        gap: 40px;
-
-    }
-
-    #tbody-1-1 h3{
-        color: rgba(239,227,176,255);
-    }
-
-    #tbody-1-1 h2{
-        color: white;
-    }
-
-    #tbody-1-1 p{
-        color: rgb(194, 189, 189);
-    }
-
-    #tbody-1-1 img{
-        width: 100%;
-
-    }
-
-    .scroll-bg {
-        background-color: rgba(65,63,48,255);
-        width: 400px;
-        border-radius: 50px;
-    }
-
-    .scroll-div {
-        width: 400px;
-        background: rgba(65,63,48,255);
-        height: 500px;
-        overflow: hidden;
-        overflow-y: scroll;
-    }
-
-    .scroll-object {
-        color: white;
-        font-family: 'Times New Roman', Times, serif;
-        font-size: 15px;
-        padding: 20px;
-    }
-
-    .scroll-object h3{
-        color: rgba(239,227,176,255);
-    }
-    .scroll-object h2{
-        color: white;
-    }
-    .scroll-object p{
-        color: rgb(194, 189, 189);
-    }
-
-    /* information part */
-
-    #info hr {
-        border: none;
-        height: 2px;
-        color: black;
-        background-color: black;
-    }
-
-    #info h1{
-        font-weight: bold;
-        padding-left: 40%;
-    }
-
-    .info-div {
-        width: 90%;
-        padding-left: 5%;
-        display: grid;
-        Grid-auto-rows: size;
-        Grid-template-columns: repeat(3,1fr);
-        gap: 100px;
-
-    }
-
-    .info-div img {
-        width: 100%;
-    }
-
-    .info-div h2{
-        color: #608e80;
-    }
-
-    .info-div p{
-        color: rgb(163, 159, 159);
-    }
-
-
-    /* Bottom body */
-
-    #bbody {
-        width: 100%;
-        height: 350px;
-        background-color: rgba(65,63,48,255);
-        padding-top: 0%;
-    }
-
-    #bbody h1 {
-        padding-top: 80px;
-        font-size: 50px;
-        padding-left: 30px;
-        color: white;
-    }
-
-    #bbody h1 span {
-        color: rgba(239,227,176,255);
-    }
-
-    #sub {
-        border-color: white;
-        background-color: rgb(65,63,48,255);
-        margin-left: 2%;
-        padding: 12px 30px;
-        border-radius: 30px;
-        color: white;
-        font-weight: bold;
-        font-size: 15px;
-        transition: .4s;
-    }
-
-    #sub:hover {
-      transform: scale(1.3);
-      cursor: pointer;
-    }
-
-    /* Footer */
-
-    #footer {
-      height: 1vh;
-      width: 100%;
-      border-top: 1px solid white;
-    }
-
-    footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-left: 5%;
-      padding-right: 5%;
-      background-color: rgba(65, 63, 48, 255);
-    }
-
-    footer ul li {
-      list-style-type: none;
-      display: inline-block;
-      padding: 10px 20px;
-    }
-
-    footer ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    footer ul li a:hover {
-      color: rgb(78, 192, 236);
-      transition: 0.3s;
-    }
-
-    .footer1 {
-      color: white;
-      text-decoration: none;
-    }
-
-
-    /* Media queries */
-
-    @media only screen and (max-width: 930px) and (min-width: 501px) {
-        
-        #navbar {
-            height: 1vh;
-        }
-        
-        #navbar ul{
-            display: none;
-        }
-
-        #tbody h1 {
-            font-size: 70px;
-        }
-
-        #tbody {
-            height: 1600px;
-        }
-
-        #tbody-1{
-            padding-left: 4%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        #info h1{
-        font-weight: bold;
-        padding-left: 25%;
-        }
-
-        .info-div {
-        width: 90%;
-        padding-left: 5%;
-        display: grid;
-        Grid-auto-rows: size;
-        Grid-template-columns: repeat(2,1fr);
-        gap: 20px;
-
-        }
-
-        .info-div img {
-        width: 100%;
-        }
-
-        #bbody {
-            height: 600px;
-        }
-
-        #footer ul{
-            display: none;
-        }
-    
-        }
-
-        @media only screen and (max-width: 500px) {
-          
-        #navbar {
-            height: 3vh;
-        }
-        #navbar ul{
-            display: none;
-        }
-
-        #tbody {
-            height: 1500px;
-        }
-
-        #tbody h1 {
-            font-size: 50px;
-        }
-
-        #tbody-1{
-            padding-left: 4%;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        #info h1{
-        font-weight: bold;
-        padding-left: 25%;
-        }
-
-        .info-div {
-        width: 90%;
-        padding-left: 5%;
-        display: grid;
-        Grid-auto-rows: size;
-        Grid-template-columns: repeat(1,1fr);
-        gap: 20px;
-
-        }
-
-        .info-div img {
-        width: 100%;
-        }
-
-        #bbody {
-            height: 600px;
-        }
-
-        #footer ul{
-            display: none;
-        }
-
-        }
-</style>
-  <body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>STAYUPDATE</title>
+        <link rel="stylesheet" href="./styles/index.css">
+    </head>
+<body>
     <div id="navbar">
-      <nav>
+        <nav>
         <a href="index.html"
-          ><img class="logo" src="logo-no-background.png" alt=""
+        ><img class="logo" src="logo-no-background.png" alt=""
         /></a>
         <ul>
-          <li><a class="menu" href="login.html">Browse</a></li>
-          <li><a class="menu" href="login.html">Workspace</a></li>
-          <li><a class="menu" href="login.html">Tools</a></li>
-          <li><a class="menu" href="subscription.html">Support</a></li>
-          <li><a class="menu" href="subscription.html">About Us</a></li>
+            <li><a class="menu" href="login.html">Browse</a></li>
+            <li><a class="menu" href="login.html">Workspace</a></li>
+            <li><a class="menu" href="login.html">Tools</a></li>
+            <li><a class="menu" href="subscription.html">Support</a></li>
+            <li><a class="menu" href="subscription.html">About Us</a></li>
         </ul>
         <a href="login.html"><button id="btn">Get Started</button></a>
     </nav>
@@ -531,33 +168,33 @@
             <div>
                 <h3>Fell into deep depression, was fired from three films: Priyanka on botched nose surgery</h3>
                 <p>Commenting on her botched nose surgery, Priyanka Chopra said, \"It was a dark phase...My face looked completely different, and I went into a deep, deep depression.\" Priyanka added that she was fired from three films. The actress went through the doctor-recommended surgery to get a polyp in her nasal cavity removed during initial stages of her career.</p>           
-             </div>
+            </div>
             <div>
                 <img src="https://static.inshorts.com/inshorts/images/v1/variants/jpg/m/2023/05_may/4_thu/img_1683180854074_336.jpg?" alt="">
             </div>
         </div>
     </div>
     <div id="bbody">
-      <h1>
-        Interested to get notified? Subscribe and get
-        <span>the most </span>piping <span>hot news</span> of the week, emailed
-        <span>straight</span> to your inbox.
-      </h1>
-      <button id="sub">Subscribe</button>
+        <h1>
+            Interested to get notified? Subscribe and get
+            <span>the most </span>piping <span>hot news</span> of the week, emailed
+            <span>straight</span> to your inbox.
+        </h1>
+    <button id="sub">Subscribe</button>
     </div>
     <div id="footer">
-      <footer>
+    <footer>
         <a href="index.html"
-          ><img class="logo" src="logo-no-background.png" alt=""
+            ><img class="logo" src="logo-no-background.png" alt=""
         /></a>
         <ul>
-          <li><a class="menu" href="subscription.html">About Us</a></li>
-          <li><a class="menu" href="login.html">Press Release</a></li>
-          <li><a class="menu" href="subscription.html">Press Office</a></li>
-          <li><a class="menu" href="subscription.html">Contact Us</a></li>
+            <li><a class="menu" href="subscription.html">About Us</a></li>
+            <li><a class="menu" href="login.html">Press Release</a></li>
+            <li><a class="menu" href="subscription.html">Press Office</a></li>
+            <li><a class="menu" href="subscription.html">Contact Us</a></li>
         </ul>
         <a href="index.html" class="footer1">Powered by STAYUPDATE</a>
-      </footer>
+        </footer>
     </div>
-  </body>
+</body>
 </html>
