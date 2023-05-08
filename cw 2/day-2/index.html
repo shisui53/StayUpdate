@@ -15,7 +15,7 @@
     /* Navbar */
 
     #navbar {
-        height: 9vh;
+        height: 1vh;
         width: 100%;
     }
 
@@ -70,34 +70,145 @@
 
     #tbody {
         width: 100%;
-        height: 800px;
+        height: 1100px;
         background-color: rgba(65,63,48,255);
         padding-top: 0%;
     }
+
+    #tbody h1 {
+        padding-top: 50px;
+        padding-left: 3%;
+        padding-right: 3%;
+        font-size: 100px;
+        color: white;
+        padding-bottom: 0%;
+        margin-bottom: 0%;
+    }
+
+    #tbody h1 span {
+        color: rgba(239,227,176,255);
+    }
+
+    #tbody-1 {
+        width: 90%;
+        display: grid;
+        Grid-auto-rows: size;
+        Grid-template-columns: repeat(2,1fr);
+        padding-left: 12%;
+        padding-top: 50px;
+        gap: 40px;
+
+    }
+
+    #tbody-1-1 h3{
+        color: rgba(239,227,176,255);
+    }
+
+    #tbody-1-1 h2{
+        color: white;
+    }
+
+    #tbody-1-1 p{
+        color: rgb(194, 189, 189);
+    }
+
+    #tbody-1-1 img{
+        width: 100%;
+
+    }
+
+    .scroll-bg {
+        background-color: rgba(65,63,48,255);
+        width: 400px;
+        border-radius: 50px;
+    }
+
+    .scroll-div {
+        width: 400px;
+        background: rgba(65,63,48,255);
+        height: 500px;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+
+    .scroll-object {
+        color: white;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 15px;
+        padding: 20px;
+    }
+
+    .scroll-object h3{
+        color: rgba(239,227,176,255);
+    }
+    .scroll-object h2{
+        color: white;
+    }
+    .scroll-object p{
+        color: rgb(194, 189, 189);
+    }
+
+    /* information part */
+
+    #info hr {
+        border: none;
+        height: 2px;
+        color: black;
+        background-color: black;
+    }
+
+    #info h1{
+        font-weight: bold;
+        padding-left: 40%;
+    }
+
+    .info-div {
+        width: 90%;
+        padding-left: 5%;
+        display: grid;
+        Grid-auto-rows: size;
+        Grid-template-columns: repeat(3,1fr);
+        gap: 100px;
+
+    }
+
+    .info-div img {
+        width: 100%;
+    }
+
+    .info-div h2{
+        color: #608e80;
+    }
+
+    .info-div p{
+        color: rgb(163, 159, 159);
+    }
+
 
     /* Bottom body */
 
     #bbody {
         width: 100%;
-        height: 250px;
+        height: 350px;
         background-color: rgba(65,63,48,255);
         padding-top: 0%;
     }
 
     #bbody h1 {
-        padding-top: 50px;
-        text-align: center;
+        padding-top: 80px;
+        font-size: 50px;
+        padding-left: 30px;
         color: white;
     }
 
     #bbody h1 span {
-        color: rgb(207, 207, 70);
+        color: rgba(239,227,176,255);
     }
 
     #sub {
         border-color: white;
         background-color: rgb(65,63,48,255);
-        margin-left: 45%;
+        margin-left: 2%;
         padding: 12px 30px;
         border-radius: 30px;
         color: white;
@@ -150,6 +261,113 @@
         color: white;
         text-decoration: none;
     }
+
+    /* Media queries */
+
+    @media only screen and (max-width: 930px) and (min-width: 501px) {
+        
+        #navbar {
+            height: 1vh;
+        }
+        
+        #navbar ul{
+            display: none;
+        }
+
+        #tbody h1 {
+            font-size: 70px;
+        }
+
+        #tbody {
+            height: 1600px;
+        }
+
+        #tbody-1{
+            padding-left: 4%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #info h1{
+        font-weight: bold;
+        padding-left: 25%;
+        }
+
+        .info-div {
+        width: 90%;
+        padding-left: 5%;
+        display: grid;
+        Grid-auto-rows: size;
+        Grid-template-columns: repeat(2,1fr);
+        gap: 20px;
+
+        }
+
+        .info-div img {
+        width: 100%;
+        }
+
+        #bbody {
+            height: 600px;
+        }
+
+        #footer ul{
+            display: none;
+        }
+    
+        }
+
+        @media only screen and (max-width: 500px) {
+          
+        #navbar {
+            height: 3vh;
+        }
+        #navbar ul{
+            display: none;
+        }
+
+        #tbody {
+            height: 1500px;
+        }
+
+        #tbody h1 {
+            font-size: 50px;
+        }
+
+        #tbody-1{
+            padding-left: 4%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        #info h1{
+        font-weight: bold;
+        padding-left: 25%;
+        }
+
+        .info-div {
+        width: 90%;
+        padding-left: 5%;
+        display: grid;
+        Grid-auto-rows: size;
+        Grid-template-columns: repeat(1,1fr);
+        gap: 20px;
+
+        }
+
+        .info-div img {
+        width: 100%;
+        }
+
+        #bbody {
+            height: 600px;
+        }
+
+        #footer ul{
+            display: none;
+        }
+
+        }
 </style>
 <body>
     <div id="navbar">
@@ -166,7 +384,155 @@
     </nav>
     </div>
     <div id="tbody">
-
+        <h1><span>Explore</span> the <span>world's</span> knowledge, culture and ideas</h1>
+        <div id="tbody-1">
+            <div id="tbody-1-1">
+                <img src="https://static.inshorts.com/inshorts/images/v1/variants/jpg/m/2023/05_may/4_thu/img_1683168520775_80.jpg?" alt="">
+                <h3>World</h3>
+                <h2>Turkish singer Gulsen sentenced over her mid-concert joke on religious schools</h2>
+                <p>Turkish pop singer Gulsen was handed a 10-month suspended sentence for \"inciting hatred and enmity\" over a joke about the country's religious schools. Gulsen was briefly jailed last year for the joke which she had made during a concert. She had said that the \"perversion\" of one of her musicians came from attending a religious school.</p>
+            </div>
+            <div id="tbody-1-2" class="scroll-bg">
+                <div class="scroll-div">
+                    <div class="scroll-object">
+                        <h3>Technology</h3>
+                <h2>Google launches 'passkeys' for password-free sign-in</h2>
+                <p>Google has begun rolling out 'passkeys' that lets users sign into their Google accounts without a password or 2-Step Verification. Passkeys enable users to securely sign in to their Google accounts using their fingerprint, face, screen lock, or hardware security key. \"Unlike passwords, passkeys can only exist on your devices,\" Google said in a blog post.</p>
+                <hr>
+                <h3>Technology</h3>
+                <h2>Cognizant to lay off 3,500 employees</h2>
+                <p>Cognizant will lay off 3,500 employees and also give up millions of square feet in office space to save costs, saying that its revenues will decline in 2023. The company will incur $200 million in employee severance and other costs, which it said is \"primarily related to non-billable and corporate personnel, which we expect to mostly incur in 2023\".</p>
+                <hr>
+                <h3>Technology</h3>
+                <h2>How does Google's password-free sign-in 'passkey' work?</h2>
+                <p>'Passkeys' let users sign in to their Google Account with fingerprint, face scan, or device screen lock, like a PIN. Unlike passwords, passkeys can only exist on your devices. \"The main ingredient of passkeys is cryptographic private key – this is what is stored on your devices...When you create one, the corresponding public key is uploaded to Google,\" said Google.</p>
+                <hr>
+                <h3>Technology</h3>
+                <h2>Class 12 passout making ₹5 crore a day from cyber scams held from Hyderaba</h2>
+                <p>Mumbai Police have exposed a ring of cybercriminals that stole money from people by posing as police personnel and arrested its mastermind, a Class 12 passout. The 49-year-old mastermind Shrinivas Rao Dadi, who had been making up to ₹5 crore a day, was arrested from a hotel in Hyderabad, PTI reported. Police also arrested four members of his gang.</p>
+                <hr>
+                <h3>Technology</h3>
+                <h2>Google to replace iconic 'lock' icon in Chrome, shares pic of new icon</h2>
+                <p>Google will be replacing the 'lock' icon in Chrome's address bar with a variant of the tune icon, which is commonly used to indicate controls and settings. \"The lock icon is meant to indicate that the network connection is a secure channel between the browser,\" Google said. \"But it's a remnant of an era where HTTPS was uncommon,\" it added.</p>
+                <hr>
+                <h3>Technology</h3>
+                <h2>Remote work can hurt your career: IBM CEO Arvind Krishna</h2>
+                <p>IBM's CEO Arvind Krishna told Bloomberg that working remotely can hurt people's careers, especially those who are in managerial roles. \"Being a people manager when you're remote is just tough because if you're managing people, you need to be able to see them once in a while,\" he said. \"We work better when we're together in person,\" he added.</p>
+                <hr>
+                <h3>Technology</h3>
+                <h2>Zerodha CEO explains a new part-time job scam after friend loses ₹5 lakh</h2>
+                <p>Zerodha CEO Nithin Kamath warned of a scam after someone he knows lost ₹5 lakh. \"It started with a response to a part-time job offer on WhatsApp,\" Kamath tweeted, adding that ₹30,000 was given to the person for fake reviews for resorts. The person was then added to a Telegram group and lured into trading on a mock crypto platform.</p>
+                <hr>
+                <h3>Technology</h3>
+                <h2>Price cuts in EV market worrying trend: Ford CEO</h2>
+                <p>Ford CEO Jim Farley on Wednesday said price cuts in the EV market is \"a worrying trend\". \"The resale value for people who bought at higher prices is awful. They never forget,\" Farley stated. His comments came as Ford reduced price of its Mustang Mach-E electric vehicle by up to 8% following a series of price cuts by rival Tesla.</p>
+                <hr>
+                <h3>Technology</h3>
+                <h2>LinkedIn Co-founder Reid Hoffman's startup launches 'Pi' chatbot</h2>
+                <p>Inflection AI, the startup founded by LinkedIn Co-founder Reid Hoffman and DeepMind Co-founder Mustafa Suleyman, has released its first AI chatbot product. The startup's chatbot, named Pi, is similar to ChatGPT and uses generative AI technology to interact with users through conversations. Users can interact with Pi across platforms, including its website and social media platforms like Instagram.</p>
+                <hr>
+                <h3>Technology</h3>
+                <h2>TikTok's US data security chief to leave amid calls for app ban</h2>
+                <p>TikTok on Tuesday said its head of trust and safety for US data security, Eric Han, will leave the company on May 12. His departure comes as the company owned by China's ByteDance faces risk of getting banned in US over data privacy concerns. Recently, TikTok has been banned from government devices in multiple countries including Canada and UK.</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div id="info">
+        <h1>Most Opened weekly</h1>
+        <hr>
+        <div class="info-div">
+            <div>
+                <h2>Technology</h2>
+            </div>
+            <div>
+                <h3>TikTok's US data security chief to leave amid calls for app ban</h3>
+                <p>TikTok on Tuesday said its head of trust and safety for US data security, Eric Han, will leave the company on May 12. His departure comes as the company owned by China's ByteDance faces risk of getting banned in US over data privacy concerns. Recently, TikTok has been banned from government devices in multiple countries including Canada and UK.</p>
+            </div>
+            <div>
+                <img src="https://static.inshorts.com/inshorts/images/v1/variants/jpg/m/2023/05_may/3_wed/img_1683106253231_623.jpg?" alt="">
+            </div>
+        </div>
+        <hr>
+        <div class="info-div">
+            <div>
+                <h2>Sports</h2>
+            </div>
+            <div>
+                <h3>22-year-old Haaland breaks record for scoring most goals in a single PL season</h3>
+                <p>Manchester City's 22-year-old forward Erling Haaland broke the record for scoring most goals in a single Premier League season on Wednesday night. Haaland took his tally of goals in Premier League 2022-23 to 35 with a 70th-minute goal against West Ham United. Andy Cole (Newcastle United, 1993-94) and Alan Shearer (Blackburn Rovers 1994-95) jointly held the previous record (34 goals).</p>
+            </div>
+            <div>
+                <img src="https://static.inshorts.com/inshorts/images/v1/variants/jpg/m/2023/05_may/3_wed/img_1683148541303_983.jpg?" alt="">
+            </div>
+        </div>
+        <hr>
+        <div class="info-div">
+            <div>
+                <h2>National</h2>
+            </div>
+            <div>
+                <h3>Congress wins Shimla MC polls after 10 yrs with 24 seats, BJP at 9</h3>
+                <p>The Congress party has won majority of seats in the Shimla Municipal Corporation election after 10 years. It has claimed 24 out of 34 total seats in the election. The BJP secured nine seats, while the Communist Party of India (CPM) won the seat only in one ward. The Aam Aadmi Party (AAP) failed to win any of the seats.</p>
+            </div>
+            <div>
+                <img src="https://static.inshorts.com/inshorts/images/v1/variants/jpg/m/2023/05_may/4_thu/img_1683195177701_110.jpg?" alt="">
+            </div>
+        </div>
+        <hr>
+        <div class="info-div">
+            <div>
+                <h2>Business</h2>
+            </div>
+            <div>
+                <h3>Go First cancels all flights till May 9, promises full refund</h3>
+                <p>Go First on Thursday said, \"We regret to inform that due to operational reasons, Go First flights scheduled till 9th May 2023 have been cancelled.\" \"We apologise for the inconvenience caused by the flight cancellations. A full refund will be issued to the original mode of payment shortly,\" it further said.</p>
+            </div>
+            <div>
+                <img src="https://static.inshorts.com/inshorts/images/v1/variants/jpg/m/2023/05_may/4_thu/img_1683185834556_669.jpg?" alt="">
+            </div>
+        </div>
+        <hr>
+        <div class="info-div">
+            <div>
+                <h2>world</h2>
+            </div>
+            <div>
+                <h3>No option left other than elimination of Zelenskyy: Russia after Putin assassination bid</h3>
+                <p>After the alleged attempt by Ukraine to assassinate Russian President Vladimir Putin, Deputy Chairman of Russia's Security Council, Dmitry Medvedev, said, \"After today's terrorist attack, there are no options left other than physical elimination of Ukrainian President Volodymyr Zelenskyy and his clique.\" Russia earlier said there was no material damage to the buildings and Putin wasn't injured.\n</p>
+            </div>
+            <div>
+                <img src="https://static.inshorts.com/inshorts/images/v1/variants/jpg/m/2023/05_may/4_thu/img_1683173542482_631.jpg?" alt="">
+            </div>
+        </div>
+        <hr>
+        <div class="info-div">
+            <div>
+                <h2>Politics</h2>
+            </div>
+            <div>
+                <h3>Congress wins Shimla MC polls after 10 yrs with 24 seats, BJP at 9</h3>
+                <p>The Congress party has won majority of seats in the Shimla Municipal Corporation election after 10 years. It has claimed 24 out of 34 total seats in the election. The BJP secured nine seats, while the Communist Party of India (CPM) won the seat only in one ward. The Aam Aadmi Party (AAP) failed to win any of the seats.</p>
+            </div>
+            <div>
+                <img src="https://static.inshorts.com/inshorts/images/v1/variants/jpg/m/2023/05_may/4_thu/img_1683195177701_110.jpg?" alt="">
+            </div>
+        </div>
+        <hr>
+        <div class="info-div">
+            <div>
+                <h2>Entertainment</h2>
+            </div>
+            <div>
+                <h3>Fell into deep depression, was fired from three films: Priyanka on botched nose surgery</h3>
+                <p>Commenting on her botched nose surgery, Priyanka Chopra said, \"It was a dark phase...My face looked completely different, and I went into a deep, deep depression.\" Priyanka added that she was fired from three films. The actress went through the doctor-recommended surgery to get a polyp in her nasal cavity removed during initial stages of her career.</p>           
+             </div>
+            <div>
+                <img src="https://static.inshorts.com/inshorts/images/v1/variants/jpg/m/2023/05_may/4_thu/img_1683180854074_336.jpg?" alt="">
+            </div>
+        </div>
     </div>
     <div id="bbody">
         <h1>Interested to get notified? Subscribe and get <span>the most </span>piping <span>hot news</span> of the week, emailed <span>straight</span> to your inbox.</h1>
