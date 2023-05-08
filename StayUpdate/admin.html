@@ -13,12 +13,13 @@
         <nav>
             <a href="./index.html"><img class="logo" src="logo-no-background.png" alt="" /></a>
             <ul>
-                <li><a class="menu" href="login.html">Browse</a></li>
-                <li><a class="menu" href="login.html">Workspace</a></li>
-                <li><a class="menu" href="login.html">Tools</a></li>
+                <li><a class="menu" href="products.html">Browse</a></li>
+                <li><a class="menu" href="products.html">Workspace</a></li>
+                <li><a class="menu" href="login.html">Login</a></li>
                 <li><a class="menu" href="subscription.html">Support</a></li>
                 <li><a class="menu" href="subscription.html">About Us</a></li>
             </ul>
+            <a href="products.html"><button id="btn">Get Started</button></a>
         </nav>
     </div>
     <ul id="mainList">
@@ -32,7 +33,6 @@
         <form id="addingForm" style="display: none">
             <div>
                 <label>Select Category</label>
-
                 <select id="category">
                     <option value="technology">Technology</option>
                     <option value="sports">Sports</option>
@@ -48,6 +48,9 @@
                 <input type="text" placeholder="Author name" id="author" required />
             </div>
             <div>
+                <input type="text" id="id" placeholder="Enter Id" required>
+            </div>
+            <div>
                 <input type="text" id="title" placeholder="Title" required />
             </div>
             <div>
@@ -59,8 +62,6 @@
             <div>
                 <input type="url" id="url" placeholder="Website URL" />
             </div>
-            <div><span>Date</span><input type="date" id="date" required /></div>
-            <div><span>Time</span><input type="time" id="time" required /></div>
             <div><input type="submit" id="submit" value="Post" /></div>
         </form>
         <!-- == deleting form == -->
@@ -79,12 +80,9 @@
                 </select>
             </div>
             <div>
-                <input type="text" placeholder="Author name" id="author2" required />
+                <input type="text" id="id2" placeholder="Enter Id" required>
             </div>
-            <div>
-                <input type="text" id="title2" placeholder="Title" required />
-            </div>
-            <div><input type="submit" id="submit" value="Delete" /></div>
+            <div><input type="submit" id="submit2" value="Delete" /></div>
         </form>
         <!-- === news correction -->
         <form id="correctionForm" style="display: none">
@@ -102,7 +100,7 @@
                 </select>
             </div>
             <div>
-                <input type="text" placeholder="Author name" id="author3" required />
+                <input type="text" placeholder="Enter Id" id="id3" required>
             </div>
             <div>
                 <input type="text" id="title3" placeholder="Title" required />
@@ -113,7 +111,7 @@
             <div>
                 <input type="url" id="imageUrl3" placeholder="Image URL" required />
             </div>
-            <div><input type="submit" id="submit" value="Update" /></div>
+            <div><input type="submit" id="submit3" value="Update" /></div>
         </form>
     </div>
 </body>

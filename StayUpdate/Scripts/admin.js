@@ -1,10 +1,22 @@
-let addnews = document.querySelector("#addnews");
+
+    let addnews = document.querySelector("#addnews");
     let addingform = document.querySelector("#addingForm");
     let deletenews = document.querySelector("#deletenews");
     let deletingform = document.querySelector("#deletingForm");
     let correctnews = document.querySelector("#correctnews");
     let correctionForm = document.querySelector("#correctionForm");
-
+    let id1 = document.querySelector("#id");
+    let id2 = document.querySelector("#id2");
+    let id3 = document.querySelector("#id3");
+    id1.addEventListener("click", () => {
+        alert("Id = hourMinutesDateMonthYear , time in 24h formate(example 145508052023)")
+    }, { once: true })
+    id2.addEventListener("click", () => {
+        alert("Id = hourMinutesDateMonthYear , time in 24h formate(example 145508052023)")
+    }, { once: true });
+    id3.addEventListener("click", () => {
+        alert("Id = hourMinutesDateMonthYear , time in 24h formate(example 145508052023)")
+    }, { once: true })
 
     // ====     Add news
     addnews.addEventListener("click", () => {
@@ -28,21 +40,20 @@ let addnews = document.querySelector("#addnews");
     addingform.addEventListener("submit", () => {
         event.preventDefault();
         let category = document.querySelector("#category").value;
+        let id = document.querySelector("#id").value;
         let author = document.querySelector("#author").value;
         let title = document.querySelector("#title").value;
         let content = document.querySelector("#content").value;
         let imageUrl = document.querySelector("#imageUrl").value;
         let url = document.querySelector("#url").value;
-        let date = document.querySelector("#date").value;
-        let time = document.querySelector("#time").value;
+
         let obj = {
+            id,
             author,
             title,
             content,
             imageUrl,
-            url,
-            date,
-            time,
+            url
         };
 
         fetch(`https://restapi-n7ax.onrender.com/${category}`, {
@@ -52,14 +63,15 @@ let addnews = document.querySelector("#addnews");
             },
             body: JSON.stringify(obj),
         });
+
         addingform.reset();
+        alert("News Posted successfuly");
     });
 
     // ===== delete news
     deletenews.addEventListener("click", () => {
         addingform.style.display = "none";
         correctionForm.style.display = "none";
-
         correctnews.style.color = "black";
         correctnews.style.backgroundColor = "white";
         addnews.style.color = "black";
@@ -75,14 +87,14 @@ let addnews = document.querySelector("#addnews");
             deletenews.style.backgroundColor = "white";
         }
     });
-    deletingform.addEventListener("submit", () => {
+    deletingform.addEventListener("submit", (event) => {
         event.preventDefault();
         let category2 = document.querySelector("#category2").value;
-        let author2 = document.querySelector("#author2").value;
-        let title2 = document.querySelector("#title2").value;
+        let id2 = document.querySelector("#id2").value;
 
-        fetch(
-            `https://restapi-n7ax.onrender.com/${category2}?author=${author2}&title=${title2}`,
+        
+            fetch(
+            `https://restapi-n7ax.onrender.com/${category2}?id=${id2}`,
             {
                 method: "DELETE",
                 headers: {
@@ -90,7 +102,9 @@ let addnews = document.querySelector("#addnews");
                 },
             }
         );
+       
         deletingform.reset();
+        alert("News Deleted successfuly");
     });
 
 
@@ -114,29 +128,32 @@ let addnews = document.querySelector("#addnews");
             correctnews.style.backgroundColor = "white";
         }
     });
-    correctionForm.addEventListener("submit", () => {
+    correctionForm.addEventListener("submit", (event) => {
         event.preventDefault();
         let category = document.querySelector("#category3").value;
-        let author = document.querySelector("#author3").value;
+        let id = document.querySelector("#id3")
+
         let title = document.querySelector("#title3").value;
         let content = document.querySelector("#content3").value;
         let imageUrl = document.querySelector("#imageUrl3").value;
 
         let obj = {
-            author,
-            title,
-            content,
-            imageUrl
+            'title': `${title}`,
+            'content': `${content}`,
+            'imageUrl': `${imageUrl}`
         };
         fetch(
-            `https://restapi-n7ax.onrender.com/${category}?author=${author}&title=${title}`,
+            `https://restapi-n7ax.onrender.com/${category}?id=${id}`,
             {
                 method: "PATCH",
                 headers: {
                     "Content-type": "application/json",
                 },
+                body: obj
 
             }
         );
-        deletingform.reset();
+        correctionForm.reset();
+        alert("Correction successful");
     });
+
