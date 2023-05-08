@@ -157,7 +157,31 @@
     }
 
     /* Footer */
+    @media only screen and (max-width: 930px) and (min-width: 501px) {
+        
+        #navbar {
+            height: 1vh;
+        }
+        
+        #navbar ul{
+            display: none;
+        }
 
+        
+        }
+
+        @media only screen and (max-width: 500px) {
+          
+        #navbar {
+            height: 3vh;
+        }
+        #navbar ul{
+            display: none;
+        }
+
+       
+
+        }
    
 
     </style>
@@ -182,7 +206,7 @@
       <div id="animationContainer">
       <div id="animationRound"></div>
         <div id="login">
-          <h1 class="heading">Please Enter Your Details</h1>
+          <h1 class="heading">Admin Login</h1>
           <form id="adminLogin">
             <label for="">Enter your email</label><br>
             <input type="email" id="email" placeholder="Enter your email"><br>

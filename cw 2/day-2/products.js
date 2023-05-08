@@ -69,9 +69,13 @@ function display(prod){
         p.className="content";
         p.textContent=elem.content;
 
+
         let btn=document.createElement("button");
         btn.textContent='Subscribe'
-        btn.setAttribute('href','login.html')
+        btn.addEventListener('click', function(){
+            window.location.href='subscription.html'
+            console.log('subscription')
+        })
 
         imgdiv.append(img)
         cardbody.append(h3,p,h4,btn);

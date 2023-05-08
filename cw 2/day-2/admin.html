@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +24,7 @@
         justify-content: space-between;
         padding-left: 5%;
         padding-right: 5%;
-        background-color: rgb(47, 59, 47);
+        background-color: rgba(65, 63, 48, 255);
     }
 
     .logo {
@@ -52,17 +51,21 @@
 
     #tbody {
         width: 100%;
-        height: 800px;
-        background-color: rgb(47, 59, 47);
+        height: 1100px;
+        background-color: rgba(65, 63, 48, 255);
         padding-top: 0%;
     }
 
     /* =============== */
 
     #mainList {
-        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin: auto;
         font-size: 18px;
-        margin-top: 15px;
+        margin-top: 10vh;
+        word-wrap: none;
     }
 
     #mainList li:hover {
@@ -77,8 +80,16 @@
         display: inline-block;
         padding: 10px;
         border: 3px solid black;
+        width: 200px;
+        text-align: center;
         border-radius: 8px;
-        margin: 5px;
+        margin-left: 10px;
+    }
+
+    #container {
+        width: 90%;
+        margin: auto;
+        margin-top: 50px;
     }
 
     #addingForm,
@@ -88,16 +99,17 @@
         box-shadow: 6px 6px 1px 0px grey;
         padding: 20px 2px 20px 40px;
         border-radius: 10px;
-        display: none;
-        margin-left: 25%;
-        width: 50%;
+ 
+        margin: auto;
+        width: 70%;
         flex-direction: column;
         row-gap: 15px;
         box-sizing: border-box;
     }
 
     span {
-        margin-right: 10px;
+        width: 50%;
+      
     }
 
     input,
@@ -106,6 +118,7 @@
     }
 
     #submit {
+        width: 150px;
         border: 1px double white;
         border-radius: 3px;
         padding: 4px 10px;
@@ -129,25 +142,33 @@
         font-size: 18px;
     }
 
-    @media only screen and (max-width: 900px) {
-        #container {
-            width: 90%;
-            margin: a;
+
+    @media only screen and (max-width: 775px) {
+        #mainList {
+            width: 100%;
+            margin: auto;
+            margin-top: 11%;
+            justify-content: left;
         }
 
-        #addingForm,
-        #deletingForm {
-            border: none;
-            box-shadow: none;
-            margin-left: 0%;
-            width: 80%;
+        #container {
+            width: 100%;
         }
 
         label,
         textarea,
-        input,
-        #submit {
-            width: 90%;
+        input {
+            width: 80%;
+        }
+
+    }
+
+    @media only screen and (max-width: 670px) {
+        #mainList {
+            width: 100%;
+            margin: auto;
+            margin-top: 200px;
+            justify-content: left;
         }
     }
 </style>
@@ -155,13 +176,13 @@
 <body>
     <div id="navbar">
         <nav>
-            <a href="index.html"><img class="logo" src="logo-no-background.png" alt="" /></a>
+            <a href="./index.html"><img class="logo" src="logo-no-background.png" alt="" /></a>
             <ul>
-                <li><a class="menu" href="">Browse</a></li>
-                <li><a class="menu" href="">Workspace</a></li>
-                <li><a class="menu" href="">Tools</a></li>
-                <li><a class="menu" href="">Support</a></li>
-                <li><a class="menu" href="">About Us</a></li>
+                <li><a class="menu" href="login.html">Browse</a></li>
+                <li><a class="menu" href="login.html">Workspace</a></li>
+                <li><a class="menu" href="login.html">Tools</a></li>
+                <li><a class="menu" href="subscription.html">Support</a></li>
+                <li><a class="menu" href="subscription.html">About Us</a></li>
             </ul>
         </nav>
     </div>
@@ -173,7 +194,7 @@
 
     <div id="container">
         <!-- === adding form === -->
-        <form id="addingForm">
+        <form id="addingForm" style="display: none">
             <div>
                 <label>Select Category</label>
 
@@ -189,7 +210,7 @@
                 </select>
             </div>
             <div>
-                <input type="text" placeholder="Author" id="author" required />
+                <input type="text" placeholder="Author name" id="author" required />
             </div>
             <div>
                 <input type="text" id="title" placeholder="Title" required />
@@ -208,7 +229,7 @@
             <div><input type="submit" id="submit" value="Post" /></div>
         </form>
         <!-- == deleting form == -->
-        <form id="deletingForm">
+        <form id="deletingForm" style="display: none">
             <div>
                 <label>Select Category</label>
                 <select id="category2">
@@ -223,7 +244,7 @@
                 </select>
             </div>
             <div>
-                <input type="text" placeholder="Author" id="author2" required />
+                <input type="text" placeholder="Author name" id="author2" required />
             </div>
             <div>
                 <input type="text" id="title2" placeholder="Title" required />
@@ -231,7 +252,7 @@
             <div><input type="submit" id="submit" value="Delete" /></div>
         </form>
         <!-- === news correction -->
-        <form id="correctionForm">
+        <form id="correctionForm" style="display: none">
             <div>
                 <label>Select Category</label>
                 <select id="category3">
@@ -246,7 +267,7 @@
                 </select>
             </div>
             <div>
-                <input type="text" placeholder="Author" id="author3" required />
+                <input type="text" placeholder="Author name" id="author3" required />
             </div>
             <div>
                 <input type="text" id="title3" placeholder="Title" required />
@@ -274,10 +295,19 @@
     addnews.addEventListener("click", () => {
         deletingform.style.display = "none";
         correctionForm.style.display = "none";
-        if (addingform.style.display == "none") {
-            addingform.style.display = "flex";
-        } else {
+        deletenews.style.color = "black";
+        deletenews.style.backgroundColor = "white";
+        correctnews.style.color = "black";
+        correctnews.style.backgroundColor = "white";
+        if (addingform.style.display !== "none") {
             addingform.style.display = "none";
+            addnews.style.color = "black";
+            addnews.style.backgroundColor = "white";
+        } else {
+            addingform.style.display = "flex";
+            addnews.style.color = "white";
+            addnews.style.backgroundColor = "rgb(36, 64, 43)";
+
         }
     });
     addingform.addEventListener("submit", () => {
@@ -314,10 +344,20 @@
     deletenews.addEventListener("click", () => {
         addingform.style.display = "none";
         correctionForm.style.display = "none";
+
+        correctnews.style.color = "black";
+        correctnews.style.backgroundColor = "white";
+        addnews.style.color = "black";
+        addnews.style.backgroundColor = "white";
+
         if (deletingform.style.display == "none") {
             deletingform.style.display = "flex";
+            deletenews.style.color = "white";
+            deletenews.style.backgroundColor = "rgb(36, 64, 43)";
         } else {
             deletingform.style.display = "none";
+            deletenews.style.color = "black";
+            deletenews.style.backgroundColor = "white";
         }
     });
     deletingform.addEventListener("submit", () => {
@@ -344,10 +384,19 @@
     correctnews.addEventListener("click", () => {
         addingform.style.display = "none";
         deletingform.style.display = "none";
+        addnews.style.color = "black";
+        addnews.style.backgroundColor = "white";
+        deletenews.style.color = "black";
+        deletenews.style.backgroundColor = "white";
+
         if (correctionForm.style.display == "none") {
             correctionForm.style.display = "flex";
+            correctnews.style.color = "white";
+            correctnews.style.backgroundColor = "rgb(36, 64, 43)";
         } else {
             correctionForm.style.display = "none";
+            correctnews.style.color = "black";
+            correctnews.style.backgroundColor = "white";
         }
     });
     correctionForm.addEventListener("submit", () => {
