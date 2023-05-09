@@ -10,20 +10,20 @@
         <div id="animationRound"></div>
           <div id="donate">
             <h1 class="heading">Please Enter Your Details</h1>
-            <form>
+            <form id="payment-form">
               <label for="">Enter your name</label> <br>
               <input type="text" id="name" placeholder="Enter your name" required><br>
-              <label for="">Enter your email</label><br>
+              <label for="email">Enter your email</label><br>
               <input type="email" id="email" placeholder="Enter your email" required><br>
               <label for="">Enter your card number</label><br>
-              <input type="password"  id="password" placeholder="Enter your card number" required><br>
+              <input type="password"  id="card-number" placeholder="Enter your card number" required><br>
               <label for="expiry-date">Expiry Date:</label>
-              <input type="text" name="expiry-date" placeholder="MM / YY" required>
+              <input type="text" id="expiry-date" name="expiry-date" placeholder="MM / YY" required>
               <label for="cvv">CVV:</label>
-              <input type="number" name="cvv" required placeholder="Enter CVV">
+              <input type="number" id="cvv" name="cvv" required placeholder="Enter CVV">
               <label for="amount">Amount:</label>
-              <input type="number" name="amount" placeholder="Enter Donation Amount" required>
-              <input class="btn" type="submit" value="Payment"/>
+              <input type="number" id="amount"  name="amount" placeholder="Enter Donation Amount" required>
+              <input class="btn" type="submit" value="Payment">
             </form>
           </div> 
         </div>
