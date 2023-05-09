@@ -1,4 +1,4 @@
-body {
+/* body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -39,7 +39,7 @@ input[type="submit"] {
     width: 100%;
     padding: 10px;
     margin-top: 20px;
-    background-color: #4CAF50;
+    background-color: #e04414;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -48,4 +48,97 @@ input[type="submit"] {
 }
 input[type="submit"]:hover {
     background-color: #3e8e41;
-}
+} */
+
+ body{
+    margin: 0;
+    padding: 0;
+ }
+ .nav{
+    margin: 0;
+    padding: 0;
+ }
+  #donate{
+    margin: auto;
+    height: auto;
+    padding: 20px 10px 20px 20px;
+    background-color: #fff;
+  }
+  input {
+    width: 90%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
+    margin: 10px 0px 10px 0px ;
+   
+  }
+  .btn {
+    margin-top: 20px;
+    width: 95%;
+    padding: 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    border: none;
+    background-image: linear-gradient(to right, teal, green);
+    color: #ffff;
+  }
+  .btn:hover{
+    background-image: linear-gradient(to right, red,blue);
+  }
+  .heading {
+    text-align: center;
+    font-family: cursive;
+  }
+  label {
+  color: black; 
+  font-family: 500;
+    font-size: 20px; 
+    font-family: cursive;
+  }
+  #animationContainer {
+    position: relative;
+    width: 35%;
+    margin: auto;
+    overflow: hidden;
+    padding: 10px 10px;
+    border-radius: 5px;
+  }
+  #animationRound {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    scale: 2.2;
+    background-image: linear-gradient(
+      90deg,
+      rgba(213,62,51,1)25% ,
+      rgba(209,167,52,1)25% ,
+      rgba(209,167,52,1)50% ,
+      rgba(55,122,245,1)50%,
+      rgba(55,122,245,1)75%,  
+      rgba(57,153,83,1)75%
+    );
+    z-index: -1;
+    animation: rotate 10s linear infinite;
+  }
+  @keyframes rotate{
+  from{
+    transform: rotate(360deg);
+  }
+  to{
+    transform: rotate(-360deg);
+  }
+  }
+  .forLogin{
+    text-align: center;
+    padding-top: 5px;
+  }
+  .forLogin>a{
+    color: teal;
+    text-decoration: none;
+  }
+  .forLogin>a:hover{
+    color: teal;
+    text-decoration: underline;
+  }
+ 

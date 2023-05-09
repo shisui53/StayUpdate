@@ -5,30 +5,29 @@
 	<link rel="stylesheet" href="./styles/donate.css">
 </head>
 <body>
-	<div class="container">
-        <h1>Payment Gateway Form</h1>
-        <form id="payment-form">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required placeholder="Enter Your Name">
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required placeholder="Enter Your Email">
-
-            <label for="card-number">Card Number:</label>
-            <input type="number" id="card-number" name="card-number" required placeholder="Enter Your Card Number">
-
-            <label for="expiry-date">Expiry Date:</label>
-            <input type="text" id="expiry-date" name="expiry-date" placeholder="MM / YY" required>
-
-            <label for="cvv">CVV:</label>
-            <input type="number" id="cvv" name="cvv" required placeholder="Enter CVV">
-
-            <label for="amount">Amount:</label>
-            <input type="number" id="amount" name="amount" required placeholder="Enter Donation Amount">
-
-            <input type="submit" value="Submit">
-        </form>
-    </div>
+    <div class="nav">
+        <div id="animationContainer">
+        <div id="animationRound"></div>
+          <div id="donate">
+            <h1 class="heading">Please Enter Your Details</h1>
+            <form>
+              <label for="">Enter your name</label> <br>
+              <input type="text" id="name" placeholder="Enter your name" required><br>
+              <label for="">Enter your email</label><br>
+              <input type="email" id="email" placeholder="Enter your email" required><br>
+              <label for="">Enter your card number</label><br>
+              <input type="password"  id="password" placeholder="Enter your card number" required><br>
+              <label for="expiry-date">Expiry Date:</label>
+              <input type="text" name="expiry-date" placeholder="MM / YY" required>
+              <label for="cvv">CVV:</label>
+              <input type="number" name="cvv" required placeholder="Enter CVV">
+              <label for="amount">Amount:</label>
+              <input type="number" name="amount" placeholder="Enter Donation Amount" required>
+              <input class="btn" type="submit" value="Payment"/>
+            </form>
+          </div> 
+        </div>
+        </div>
 
 	<script src="./Scripts/payment.js"></script>
 </body>
