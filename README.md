@@ -1,5 +1,3 @@
- ## auspicious-oven-3200.
-
  ## Project Name --> STAY UPDATE.
 
  ## Project members :-
